@@ -34,8 +34,8 @@ public class HelloController {
 
     @RequestMapping("/solr/{searchTerm}/{responseCount}")
     public JsonNode solr(@PathVariable String searchTerm, @PathVariable int responseCount) {
-        String urlString = "http://172.18.5.128:8983/solr/list_simple/suggest?suggest.dictionary=Suggester&suggest.count=" + responseCount + "&suggest.q=" + searchTerm;
-        
+        // ec2-user@172.31.49.88
+        String urlString = "http://172.31.49.88:8983/solr/list_simple/suggest?suggest.dictionary=Suggester&suggest.count=" + responseCount + "&suggest.q=" + searchTerm;
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
